@@ -1,107 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!doctype html>
+<html lang="en" class="h-100">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research Publication — Your Paper Title</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.6;
-      color: #222;
-      background-color: #fafafa;
-    }
-    header {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.2rem;
-      color: #004080;
-    }
-    .authors {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #004080;
-      border-bottom: 2px solid #004080;
-      padding-bottom: 0.2rem;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      background-color: #004080;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    a.button:hover {
-      background-color: #002850;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 4rem;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>An Octave-based Multi-Resolution CQT Architecture for Diffusion-based Audio Generation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="theme-color" content="#563d7c">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
+
 <body>
-  <header>
-    <h1>Title of the Research Paper</h1>
-    <div class="authors">Author One, Author Two, Author Three</div>
-  </header>
+<!-- Page Content -->
+<div class="text-center">
+    <div class="row">
+        <div class="col-lg-12">
+            <br>
+            <h1 class="mt-5 mb-3">An Octave-based Multi-Resolution CQT Architecture for Diffusion-based Audio Generation</h1>
+            <p class="lead">
+                Maurício do V. M. da Costa <sup>1</sup>,
+                Eloi Moliner <sup>2</sup>,
+            </p>
 
-  <section id="abstract">
-    <h2>Abstract</h2>
-    <p>
-      This paper presents [briefly describe your research focus]. We propose [main idea or methodology], demonstrating [key results or contributions]. Our findings show that [highlight main impact].
-    </p>
-  </section>
+            <p class="lead">
+                <sup>1</sup>  MTDML, IMM, University of Osnabrück, Osnabrück, Germany <br>
+                <sup>2</sup> Acoustics Lab, Department of Information and Communications Engineering, Aalto University, Finland<br>
+            </p>
 
-  <section id="contributions">
-    <h2>Key Contributions</h2>
-    <ul>
-      <li>Contribution 1 — Explain briefly.</li>
-      <li>Contribution 2 — Explain briefly.</li>
-      <li>Contribution 3 — Explain briefly.</li>
-    </ul>
-  </section>
+        </div>
+    </div>
+</div>
 
-  <section id="download">
-    <h2>Download</h2>
-    <p>
-      You can download the full paper and supplementary materials below:
-    </p>
-    <a class="button" href="link-to-your-paper.pdf" target="_blank" rel="noopener">Download PDF</a>
-    <a class="button" href="link-to-supplementary.zip" target="_blank" rel="noopener">Supplementary Materials</a>
-  </section>
+<div class="container">
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      For questions or collaborations, contact <a href="mailto:your.email@example.com">your.email@example.com</a>.
-    </p>
-  </section>
+    <div class="section">
+        <h2 class="">Listening Examples (unconditional generation)</h2>
+        <hr>
 
-  <footer>
-    <p>© 2025 Your Name or Research Group. Hosted on GitHub Pages.</p>
-  </footer>
+        <!-- 
+        <div class="section mb-5">
+            <p>
+                Some explanation
+            </p>
+        </div>
+         -->
+
+        <h3 class="">OpenSinger</h3>
+        <hr>
+
+        <table class="table table-sm text-center" style="vertical-align: middle;">
+            <tr>
+                <th class="audio-col">UNet-1D</th>
+                <th class="audio-col">NCSN++</th>
+                <th class="audio-col">CQTDiff+</th>
+                <th class="audio-col">MR-CQTDiff (proposed)</th>
+                <th class="audio-col">LDM</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/1D/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/NCSN++/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/CQTdiff+/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/MRCQTDiff/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/LDM/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/1D/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/NCSN++/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/CQTdiff+/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/MRCQTDiff/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/LDM/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/1D/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/NCSN++/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/CQTdiff+/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/MRCQTDiff/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/OpenSinger/LDM/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+        </table>
+
+        <h3 class="">Free Music Archive</h3>
+        <hr>
+
+        <table class="table table-sm text-center" style="vertical-align: middle;">
+            <tr>
+                <th class="audio-col">UNet-1D</th>
+                <th class="audio-col">NCSN++</th>
+                <th class="audio-col">CQTDiff+</th>
+                <th class="audio-col">MR-CQTDiff (proposed)</th>
+                <th class="audio-col">LDM</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/1D/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/NCSN++/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/CQTdiff+/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/MRCQTDiff/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/LDM/unconditional_0.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/1D/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/NCSN++/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/CQTdiff+/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/MRCQTDiff/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/LDM/unconditional_1.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/1D/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/NCSN++/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/CQTdiff+/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/MRCQTDiff/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls="controls" class="player" preload="metadata">
+                        <source src="samples/FMA/LDM/unconditional_2.wav" type="audio/wav">
+                        Unsupported browser.
+                    </audio>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script src="js/slider.js"></script>
 </body>
-</html>
 
+</html>

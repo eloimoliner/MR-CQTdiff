@@ -2,7 +2,7 @@
 
 This repository contains the demo page and audio samples for our paper "An Octave-based Multi-Resolution CQT Architecture for Diffusion-based Audio Generation".
 
-## 🎵 Listen to Audio Samples
+## Listen to Audio Samples
 
 Visit our [demo page](https://eloimoliner.github.io/MR-CQTdiff/) to listen to unconditional audio generation samples comparing different diffusion models:
 
@@ -26,11 +26,11 @@ If you use this work, please cite:
 }
 ```
 
-## 👥 Authors
+## Authors
 
 - **Maurício do V. M. da Costa** - MTDML, IMM, University of Osnabrück, Germany
 - **Eloi Moliner** - Acoustics Lab, Aalto University, Finland
 
-## 📄 License
+## License
 
 This project is licensed under the terms specified in the [LICENSE](LICENSE) file.

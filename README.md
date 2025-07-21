@@ -6,11 +6,13 @@ This repository contains the demo page and audio samples for our paper "An Octav
 
 Visit our [demo page](https://eloimoliner.github.io/MR-CQTdiff/) to listen to unconditional audio generation samples comparing different diffusion models:
 
-- **UNet-1D**: Baseline 1D U-Net approach
-- **NCSN++**: Score-based generative model
-- **CQTDiff+**: CQT-based diffusion model  
-- **MR-CQTDiff**: Our proposed multi-resolution CQT approach
+- **UNet-1D**: A 1-dimensional U-Net composed of temporal convolutions, similar to architectures used in waveform-domain diffusion
+- **NCSN++**: A 2-dimensional U-Net operating on STFT representations, using 2D convolutions over time and frequency axes
+- **CQTDiff+**: A baseline model that uses a differentiable and invertible CQT representation combined with a U-Net architecture
+- **MR-CQTDiff**: Our proposed model, which extends CQTdiff+ by introducing a multi-resolution CQT filter bank
 - **LDM**: Latent Diffusion Model
+
+All architectures are configured to share a similar parameter count of around 40 million parameters.
 
 ## Citation
 

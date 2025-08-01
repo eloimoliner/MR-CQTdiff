@@ -1,0 +1,32 @@
+_target_: "networks.mr_cqtdiff.MR_CQTDiff"
+
+use_norm: True
+depth: 9 #total depth of the network (including the first stage)
+emb_dim: 256 #dimensionality of the RFF embeddings
+
+#dimensions of the first stage (the length of this vector should be equal to num_octs)
+Ns: [32, 32, 64, 64, 128, 128, 256, 256,256 ] 
+
+checkpointing: [False, False, False, False, False, False, False, False, False] 
+
+Stime: [2,1,2,2,2,1,2,2] #downsample factors at the first stage, now it is ignored
+Sfreq: [1,2,1,1,1,2,1,1]
+
+
+#I am hardcoding F_dim for now, because I am tired. It should be possible to infer it from num_octs and bins_per_oct
+F_dim: [32, 64, 48, 64, 80, 96, 56, 64, 72 ]
+F_bins_per_oct: [8, 8, 8, 16, 16, 16, 16, 32, 32 ]
+
+num_dils: [2, 2, 3, 4, 5, 5, 4, 5, 5] # Start at 4 to match the original config for 3 octaves
+sample_rate: 44100
+audio_len: 262144
+
+cqt:
+    window: "hann"
+    num_octs: [3, 4, 2]
+    bins_per_oct: [8, 16, 32] #this needs to be lower than 64, otherwise the time attention is inpractical
+
+bottleneck_type: "res_dil_convs"
+
+num_bottleneck_layers: 1
+

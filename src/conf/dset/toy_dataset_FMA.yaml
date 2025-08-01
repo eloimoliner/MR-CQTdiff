@@ -1,0 +1,5 @@
+train:
+  _target_: "datasets.toy_dataset.ToyDataset"
+  fs: 44100
+  load_len: 262144
+  path: "../samples/FMA/reference"

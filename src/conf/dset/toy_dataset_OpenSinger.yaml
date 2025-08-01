@@ -1,0 +1,9 @@
+train:
+  _target_: "datasets.singing_voice_datasets.MultiDataset"
+  fs: 44100
+  path_csv: ["/scratch/elec/t412-asp/audio_datasets/singing_voice/OpenSinger/train.csv"]
+  priorities: [1]
+  load_len: 262144
+  normalize: False
+  apply_random_gain: False
+  gain_range: [-0.01, 0.01]

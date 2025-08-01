@@ -61,6 +61,15 @@ This will save logs and checkpoints in:
 src/experiments/<experiment_name>/
 ```
 
+> ⚠️ **Note:**
+> A minimal example dataset loader is provided (`toy_dataset.py`) for demonstration and debugging purposes only.
+> To train on real data (e.g., FMA, MAESTRO, OpenSinger), you should:
+>
+> * Replace the toy dataset with your own custom `torch.utils.data.IterableDataset` implementation.
+> * Update the corresponding YAML config under `src/conf/dset/` (e.g., paths, durations).
+> * Ensure your dataset returns audio tensors in the correct format and sample rate (e.g., 44.1kHz).
+
+
 ---
 
 ##  Inference (Unconditional Generation)

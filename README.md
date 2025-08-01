@@ -96,7 +96,7 @@ All models are defined in `src/networks/`:
 
 * `mr_cqtdiff.py`: Multi-resolution CQT U-Net (proposed)
 * `cqtdiff+.py`: CQT-based baseline
-* `ncsnpp.py`: 2D U-Net (NCSN++)
+* `ncsnpp.py`: STFT-based U-Net (NCSN++)
 
 Sampler implementation:
 
